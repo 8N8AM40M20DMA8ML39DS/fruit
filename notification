@@ -1,10 +1,8 @@
-local starterGui =  game:GetService("StarterGui")
+local starterGui = game:GetService("StarterGui")
 
-wait(10)
-starterGui:SetCore("SendNotification", {
-  Title = "Scripts For A.F.S",
-  Text  = "Enjoy The Scripts. Ctrl + Click for click to tp!",
-  Icon  = "rbxassetid://11238337008",
-  Duration  = 10
-   ))
-end)
+wait(8)
+starterGui:SetCore("SendNotification" , 	{
+		Title = "Welcome to A.F.S Hub",
+		Text = "Ctrl + Click to click to teleport",
+		Duration = 10
+})
