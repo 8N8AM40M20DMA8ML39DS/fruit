@@ -40,6 +40,6 @@ end)
 
 coroutine.wrap(function()
 while wait(1) do
-    dropdown:Refresh(getFruits())
+    b:Dropdown:Refresh(getFruits)
 end
 end)()
