@@ -1,0 +1,45 @@
+local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
+
+local w = library:CreateWindow("Anime Fruit") -- Creates the window
+
+local b = w:CreateFolder("Fruits") -- Creates the folder(U will put here your buttons,etc)
+local player = game.Players.LocalPlayer
+local function getFruits()
+        local FruitNames = {}
+        for i, v in pairs(game:GetService("Workspace")["3e66759c-3326-4eca-91cc-cdc8ad4a7d71"]:GetChildren()) do 
+            if not table.find(FruitNames, v.Name) then
+                table.insert(FruitNames, v.Name)
+            end
+        end
+        return FruitNames
+    end
+
+local dropdown = b:Dropdown("All Fruits",getFruits(),true,function(Value) --true/false, replaces the current title "Dropdown" with the option that t
+   if game:GetService("Workspace")["3e66759c-3326-4eca-91cc-cdc8ad4a7d71"]:FindFirstChild(Value) then
+                local Fruit =  game:GetService("Workspace")["3e66759c-3326-4eca-91cc-cdc8ad4a7d71"]:FindFirstChild(Value)
+                player.Character.HumanoidRootPart.CFrame = Fruit.PrimaryPart.CFrame + Vector3.new(0,1,0)
+                Fruit.ProximityPrompt.MaxActivationDistance = 9999
+                coroutine.wrap(function()
+                    pcall(function() 
+                        fireproximityprompt(Fruit.ProximityPrompt)
+                        wait(0.1)
+                        fireproximityprompt(Fruit.ProximityPrompt)
+                        wait(0.1)
+                        fireproximityprompt(Fruit.ProximityPrompt)
+                        wait(0.1)
+                        fireproximityprompt(Fruit.ProximityPrompt)
+                        wait(0.1)
+                        fireproximityprompt(Fruit.ProximityPrompt)
+                        wait(0.1)
+                        fireproximityprompt(Fruit.ProximityPrompt)
+                        wait(0.1)
+                    end)
+                end)()
+            end
+end)
+
+coroutine.wrap(function()
+while wait(1) do
+    dropdown:Refresh(getFruits())
+end
+end)()
