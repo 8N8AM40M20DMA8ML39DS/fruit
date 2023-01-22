@@ -6,7 +6,7 @@ local b = w:CreateFolder("Fruits") -- Creates the folder(U will put here your bu
 local player = game.Players.LocalPlayer
 local function getFruits()
         local FruitNames = {}
-        for i, v in pairs(game:GetService("Workspace")["3e66759c-3326-4eca-91cc-cdc8ad4a7d71"]:GetChildren()) do 
+        for i, v in pairs(game:GetService("Workspace")["21aeec05-e790-4612-bf14-02a964e4a6af"]:GetChildren()) do 
             if not table.find(FruitNames, v.Name) then
                 table.insert(FruitNames, v.Name)
             end
@@ -15,8 +15,8 @@ local function getFruits()
     end
 
 local dropdown = b:Dropdown("All Fruits",getFruits(),true,function(Value) --true/false, replaces the current title "Dropdown" with the option that t
-   if game:GetService("Workspace")["3e66759c-3326-4eca-91cc-cdc8ad4a7d71"]:FindFirstChild(Value) then
-                local Fruit =  game:GetService("Workspace")["3e66759c-3326-4eca-91cc-cdc8ad4a7d71"]:FindFirstChild(Value)
+   if game:GetService("Workspace")["21aeec05-e790-4612-bf14-02a964e4a6af"]:FindFirstChild(Value) then
+                local Fruit =  game:GetService("Workspace")["21aeec05-e790-4612-bf14-02a964e4a6af"]:FindFirstChild(Value)
                 player.Character.HumanoidRootPart.CFrame = Fruit.PrimaryPart.CFrame + Vector3.new(0,1,0)
                 Fruit.ProximityPrompt.MaxActivationDistance = 9999
                 coroutine.wrap(function()
